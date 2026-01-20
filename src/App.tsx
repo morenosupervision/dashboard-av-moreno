@@ -346,18 +346,19 @@ const LoginModal = ({ onClose, onLoginSuccess }: any) => {
 
     const handleLogin = (e: any) => {
         e.preventDefault();
-        if(email === 'admin@obra.com' && password === '123456') {
-            onLoginSuccess({ email: 'admin@obra.com' });
+        // Credenciales Personalizadas
+        if(email === 'zacha@moreno.com' && password === '110380') {
+            onLoginSuccess({ email: 'zacha@moreno.com' });
             onClose();
         } else {
-            setError('Credenciales Demo: admin@obra.com / 123456');
+            setError('Credenciales incorrectas. Intente nuevamente.');
         }
     };
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
              <div className="bg-slate-900 p-6 rounded-lg border border-slate-700 w-full max-w-sm">
-                 <h2 className="text-white font-bold mb-4">Acceso Admin (Demo)</h2>
+                 <h2 className="text-white font-bold mb-4">Acceso Administrativo</h2>
                  <form onSubmit={handleLogin} className="space-y-4">
                      <input type="text" placeholder="Usuario" className="w-full p-2 rounded bg-slate-800 text-white border border-slate-600 focus:border-blue-500 outline-none" value={email} onChange={e => setEmail(e.target.value)}/>
                      <input type="password" placeholder="Contraseña" className="w-full p-2 rounded bg-slate-800 text-white border border-slate-600 focus:border-blue-500 outline-none" value={password} onChange={e => setPassword(e.target.value)}/>
